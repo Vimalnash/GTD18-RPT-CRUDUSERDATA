@@ -64,6 +64,7 @@ export default function AddUpdateUserData () {
             addressZipcode !== "" &&
             phone !== "") 
         {
+            setSuccessMessage("Loading Please Wait...");
             fetch("https://6604ddfa2ca9478ea17ea44d.mockapi.io/users", {
                 method : "POST",
                 body : JSON.stringify(inputUserData),
@@ -91,6 +92,7 @@ export default function AddUpdateUserData () {
     // Update Existing UserData upload Functionality
     function UpdateData(e, editId, inputUserData) {
         e.preventDefault();
+        setSuccessMessage("Loading Please Wait...");
         fetch(`https://6604ddfa2ca9478ea17ea44d.mockapi.io/users/${editId}`, {
             method : "PUT",
             body : JSON.stringify(inputUserData),
